@@ -4600,6 +4600,7 @@ CMDs[#CMDs + 1] = {NAME = 'esptransparency [number]', DESC = 'Changes the transp
 CMDs[#CMDs + 1] = {NAME = 'partesp [part name]', DESC = 'Highlights a part'}
 CMDs[#CMDs + 1] = {NAME = 'unpartesp / nopartesp [part name]', DESC = 'removes partesp'}
 CMDs[#CMDs + 1] = {NAME = 'chams', DESC = 'ESP but without text in the way'}
+CMDs[#CMDs + 1] = {NAME = 'translator', DESC = 'Uses Google Translate API to translate languages.'}
 CMDs[#CMDs + 1] = {NAME = 'nochams / unchams', DESC = 'Removes chams'}
 CMDs[#CMDs + 1] = {NAME = 'locate [player]', DESC = 'View a single player and their status'}
 CMDs[#CMDs + 1] = {NAME = 'unlocate / nolocate [player]', DESC = 'Removes locate'}
@@ -13638,6 +13639,9 @@ addcmd('destroygui',{'destroy'},function(args, speaker)
 	Holder:Destroy()
 end)
 
+addcmd('translator',{'chattranslate'},function(args, speaker)
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/x114/RobloxScripts/main/UpdatedChatTranslator"))()
+end)
 
 if IsOnMobile then
 	local QuickCapture = Instance.new("TextButton")
