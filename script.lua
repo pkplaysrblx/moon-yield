@@ -4886,6 +4886,8 @@ CMDs[#CMDs + 1] = {NAME = 'robloxstaffwatch', DESC = ''}
 CMDs[#CMDs + 1] = {NAME = 'unrobloxstaffwatch', DESC = ''}
 CMDs[#CMDs + 1] = {NAME = "vulnspatch / vpatcher / vulnspatcher", DESC = 'Attemps to patch some vulns'}
 CMDs[#CMDs + 1] = {NAME = 'chatspy', DESC = 'Loads chatspy.'}
+CMDs[#CMDs + 1] = {NAME = 'sspy', DESC = 'Loads simplespy (mobile compatiable also)'}
+CMDs[#CMDs + 1] = {NAME = 'rainbow', DESC = 'turns the thingy rainbow'}
 task.wait()
 
 for i = 1, #CMDs do
@@ -13628,6 +13630,22 @@ addcmd('translator',{'chattranslate'},function(args, speaker)
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/x114/RobloxScripts/main/UpdatedChatTranslator"))()
 end)
 
+addcmd('ssppy',{},function(args, speaker)
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/pkplaysrblx/simplespyrblx/main/SimpleSpy/source"))("SimpleSpy")
+end)
+
+addcmd('rainbow',{},function(args, speaker)
+while true do
+	for hue = 0, 255, 4 do
+		-- HSV = hue, saturation, value
+		-- If we loop from 0 to 1 repeatedly, we get a rainbow!
+		Holder.BorderColor3 = Color3.fromHSV(hue / 256, 1, 1)
+		Holder.BackgroundColor3 = Color3.fromHSV(hue / 256, 0.5, 0.8)
+		task.wait()
+	end
+end
+end)
+
 if IsOnMobile then
 	local QuickCapture = Instance.new("TextButton")
 	local UICorner = Instance.new("UICorner")
@@ -13637,8 +13655,8 @@ if IsOnMobile then
 	QuickCapture.BackgroundTransparency = 0.14
 	QuickCapture.Position = UDim2.new(0.489, 0, 0, 0)
 	QuickCapture.Size = UDim2.new(0, 32, 0, 33)
-	QuickCapture.Font = Enum.Font.SourceSansBold
-	QuickCapture.Text = "IY"
+	QuickCapture.Font = Enum.Font.FredokaOne
+	QuickCapture.Text = "MY"
 	QuickCapture.TextColor3 = Color3.fromRGB(255, 255, 255)
 	QuickCapture.TextSize = 20.000
 	QuickCapture.TextWrapped = true
