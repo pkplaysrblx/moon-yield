@@ -1,21 +1,6 @@
 --[[
-	Message from pkplaysrblx:
-	I've used IYR's API and added more cmds
-	Hello! You might wonder why it's not executing.
-	or wondered if the script is obfuscated or not
-
-	This can possibly mean that your executor does not support Luau syntax
-	To check if it supports Luau syntax, run this:
-
-	-- If you see the message "Supported" in console (F9 or /console in chat) then the issue is probably different.
-	print(true and "Supported" or "This shouldn't be printed")
-
-	or
-
-	-- If it prints then then the issue is probably different.
-	local test = 1
-	test += 1
-	print(test)
+	moon yield
+	its skidded
 ]]--
 
 if IY_LOADED and not _G.IY_DEBUG == true then
