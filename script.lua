@@ -13641,6 +13641,8 @@ while true do
 		-- If we loop from 0 to 1 repeatedly, we get a rainbow!
 		Holder.BorderColor3 = Color3.fromHSV(hue / 256, 1, 1)
 		Holder.BackgroundColor3 = Color3.fromHSV(hue / 256, 0.5, 0.8)
+		Dark.BorderColor3 = Color3.fromHSV(hue / 256, 1, 1)
+		Dark.BackgroundColor3 = Color3.fromHSV(hue / 256, 0.5, 0.8)
 		task.wait()
 	end
 end
