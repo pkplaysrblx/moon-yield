@@ -1,6 +1,6 @@
 --[[
-	moon yield
-	its skidded
+Please execute via loader.
+Then, run loadfile('moonyield/script.lua')()
 ]]--
 
 if IY_LOADED and not _G.IY_DEBUG == true then
@@ -9,7 +9,7 @@ if IY_LOADED and not _G.IY_DEBUG == true then
 end
 
 pcall(function() getgenv().IY_LOADED = true end)
-
+	
 local cloneref = cloneref or function(o) return o end
 COREGUI = cloneref(game:GetService("CoreGui"))
 Players = cloneref(game:GetService("Players"))
@@ -3206,6 +3206,14 @@ function notify(text,text2,length)
 			notifyCount = 0
 		end
 	end)
+end
+
+--[[
+run installer.lua
+]]
+
+if not isfolder("moonyield") and not isfile("moonyield/script.lua") then
+game.Players.LocalPlayer:Kick("Please run the installer! If you have, run loadfile('moonyield/script.lua')(). If you think this was a mistake, please create an issue.")
 end
 
 local lastMessage = nil
