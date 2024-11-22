@@ -4,7 +4,10 @@ Then, run loadfile('moonyield/script.lua')()
 ]]--
 
 if IY_LOADED and not _G.IY_DEBUG == true then
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/fuckusfm/infiniteyield-reborn/master/uselessscriptthatexistsinthisrepoiwin'))()
+	loadstring(game:HttpGet('https://pkplaysrblx.github.io/moonyield_alreadyexecuted.wyvern'))() --[[
+	from iyr.lol
+	.wyvern file bc why not
+	]]
 	return
 end
 
@@ -217,7 +220,7 @@ Title.Size = UDim2.new(0, 250, 0, 20)
 Title.Font = Enum.Font.SourceSans
 Title.TextSize = 18
 if os.date("*t", os.time()).month == 4 then
-	Title.Text = "Ligma Balls v"  .. currentVersion
+	Title.Text = "Skidded Balls v"  .. currentVersion
 else
 	if string.find(currentVersion, '6.1') then
 		Title.Text = "Moon Yielding v" .. currentVersion
@@ -13665,8 +13668,8 @@ if IsOnMobile then
 	QuickCapture.BackgroundTransparency = 0.14
 	QuickCapture.Position = UDim2.new(0.489, 0, 0, 0)
 	QuickCapture.Size = UDim2.new(0, 32, 0, 33)
-	QuickCapture.Font = Enum.Font.FredokaOne
-	QuickCapture.Text = "MY"
+	QuickCapture.Font = Enum.Font.GothamBold
+	QuickCapture.Text = "PK"
 	QuickCapture.TextColor3 = Color3.fromRGB(255, 255, 255)
 	QuickCapture.TextSize = 20.000
 	QuickCapture.TextWrapped = true
@@ -13805,7 +13808,7 @@ IYMouse.Move:Connect(checkTT)
 
 task.spawn(function()
 	local success, latestVersionInfo = pcall(function() 
-		local versionJson = game:HttpGet('https://raw.githubusercontent.com/fuckusfm/infiniteyield-reborn/master/version')
+		local versionJson = game:HttpGet('https://storage.iyr.lol/legacy-iyr/version')
 		return HttpService:JSONDecode(versionJson)
 	end)
 
