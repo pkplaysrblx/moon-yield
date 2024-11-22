@@ -13645,19 +13645,21 @@ addcmd('ssppy',{},function(args, speaker)
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/pkplaysrblx/simplespyrblx/main/SimpleSpy/source"))("SimpleSpy")
 end)
 
+-- Command to create a rainbow effect on both Holder and Dark UI elements
 addcmd('rainbow',{},function(args, speaker)
-while true do
-	for hue = 0, 255, 4 do
-		-- HSV = hue, saturation, value
-		-- If we loop from 0 to 1 repeatedly, we get a rainbow!
-		Holder.BorderColor3 = Color3.fromHSV(hue / 256, 1, 1)
-		Holder.BackgroundColor3 = Color3.fromHSV(hue / 256, 0.5, 0.8)
-		Dark.BorderColor3 = Color3.fromHSV(hue / 256, 1, 1)
-		Dark.BackgroundColor3 = Color3.fromHSV(hue / 256, 0.5, 0.8)
-		task.wait()
-	end
-end
+
+    while true do
+        for hue = 0, 255, 4 do
+            Holder.BorderColor3 = Color3.fromHSV(hue / 256, 1, 1)
+            Holder.BackgroundColor3 = Color3.fromHSV(hue / 256, 0.5, 0.8)
+            Dark.BorderColor3 = Color3.fromHSV(hue / 256, 1, 1)
+            Dark.BackgroundColor3 = Color3.fromHSV(hue / 256, 0.5, 0.8)
+            
+            task.wait(0.1)
+        end
+    end
 end)
+
 
 if IsOnMobile then
 	local QuickCapture = Instance.new("TextButton")
