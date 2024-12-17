@@ -14,4 +14,4 @@ loadfile('moonyield/script.lua')()
 
 
 
-Note to: (ffedex)[https://github.com/ffedex] fuck you skid
+Note to: [ffedex](https://github.com/ffedex) fuck you skid
