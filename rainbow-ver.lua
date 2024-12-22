@@ -4,7 +4,7 @@ Then, run loadfile('moonyield/script.lua')()
 ]]--
 
 if IY_LOADED and not _G.IY_DEBUG == true then
-	loadstring(game:HttpGet('https://pkplaysrblx.github.io/moonyield_alreadyexecuted.wyvern'))() --[[
+	loadstring(game:HttpGet('https://pkplaysrblx.github.io/moonyield_alreadyexecuted.mydevs'))() --[[
 	from iyr.lol
 	.wyvern file bc why not
 	]]
