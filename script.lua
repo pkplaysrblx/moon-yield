@@ -4900,6 +4900,7 @@ CMDs[#CMDs + 1] = {NAME = 'chatspy', DESC = 'Loads chatspy.'}
 CMDs[#CMDs + 1] = {NAME = 'sspy', DESC = 'Loads simplespy (mobile compatiable also)'}
 CMDs[#CMDs + 1] = {NAME = 'rainbow', DESC = 'turns the thingy rainbow'}
 CMDs[#CMDs + 1] = {NAME = 'fakechat / fc', DESC = 'fake chats'}
+CMDs[#CMDs + 1] = {NAME = 'dragchat / chatdrag', DESC = 'fake chats'}
 task.wait()
 
 for i = 1, #CMDs do
@@ -13671,6 +13672,11 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageReque
 						.. args[2],
 					"All"
 				)
+end)
+
+addcmd('dragchat',{'chatdrag'},function(args, speaker)
+repeat wait() until game:IsLoaded()
+local c =game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):WaitForChild("Chat"):FindFirstChildWhichIsA("Frame");c.Active = true;c.Draggable=true
 end)
 
 if IsOnMobile then
