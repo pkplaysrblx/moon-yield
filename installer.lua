@@ -21,7 +21,6 @@ local UIGradient_4 = Instance.new("UIGradient")
 local UIGradient_5 = Instance.new("UIGradient")
 local _9b72358729332 = Instance.new("TextLabel")
 local UIGradient_6 = Instance.new("UIGradient")
-local RV_74983628473 = Instance.new("TextButton")
 local NV_12987432087 = Instance.new("TextButton")
 
 --Properties:
@@ -146,22 +145,6 @@ UIGradient_6.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fr
 UIGradient_6.Rotation = -89
 UIGradient_6.Parent = _9b72358729332
 
-RV_74983628473.Name = "RV_74983628473"
-RV_74983628473.Parent = OptionsFrame
-RV_74983628473.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-RV_74983628473.BackgroundTransparency = 0.900
-RV_74983628473.BorderColor3 = Color3.fromRGB(0, 0, 0)
-RV_74983628473.BorderSizePixel = 0
-RV_74983628473.Position = UDim2.new(0.280087531, 0, 0.206185564, 0)
-RV_74983628473.Size = UDim2.new(0, 200, 0, 89)
-RV_74983628473.Font = Enum.Font.GothamBold
-RV_74983628473.Text = "Rainbow Version"
-RV_74983628473.TextColor3 = Color3.fromRGB(255, 255, 255)
-RV_74983628473.TextScaled = true
-RV_74983628473.TextSize = 14.000
-RV_74983628473.TextStrokeTransparency = 0.000
-RV_74983628473.TextWrapped = true
-
 NV_12987432087.Name = "NV_12987432087"
 NV_12987432087.Parent = OptionsFrame
 NV_12987432087.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -189,28 +172,6 @@ local function DKBA_fake_script() -- Options_783274982.LocalScript
 	end)
 end
 coroutine.wrap(DKBA_fake_script)()
-local function WDQZ_fake_script() -- RV_74983628473.LocalScript 
-	local script = Instance.new('LocalScript', RV_74983628473)
-
-	script.Parent.Parent['RV_74983628473'].MouseButton1Down:Connect(function()
-		if not isfolder("moonyield") and not isfile("moonyield/script.lua") then
-			makefolder("moonyield")
-			writefile("moonyield/script.lua", "loadstring(game:HttpGet('https://raw.githubusercontent.com/pkplaysrblx/moon-yield/refs/heads/main/rainbow-ver.lua'))()")
-			game['Players']['LocalPlayer'].PlayerGui.MoonYieldInstaller:Destroy()
-			notif("Finished installing.")
-			notif("Please run this code!\nloadfile('moonyield/script.lua')()")
-		else if isfolder("moonyield") and isfile("moonyield/script.lua") then
-				delfile("moonyield/script.lua")
-				wait(2)
-				writefile("moonyield/script.lua", "loadstring(game:HttpGet('https://raw.githubusercontent.com/pkplaysrblx/moon-yield/refs/heads/main/rainbow-ver.lua'))()")
-				game['Players']['LocalPlayer'].PlayerGui.MoonYieldInstaller:Destroy()
-				notif("Finished installing.")
-				notif("Please run this code!\nloadfile('moonyield/script.lua')()")
-			end
-		end
-	end)
-end
-coroutine.wrap(WDQZ_fake_script)()
 local function KKVIKV_fake_script() -- NV_12987432087.LocalScript 
 	local script = Instance.new('LocalScript', NV_12987432087)
 
