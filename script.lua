@@ -6,7 +6,6 @@ Then, run loadfile('moonyield/script.lua')()
 if IY_LOADED and not _G.IY_DEBUG == true then
 	loadstring(game:HttpGet('https://pkplaysrblx.github.io/moonyield_alreadyexecuted.mydevs'))() --[[
 	from iyr.lol
-	.wyvern file bc why not
 	]]
 	return
 end
@@ -13828,13 +13827,13 @@ IYMouse.Move:Connect(checkTT)
 
 task.spawn(function()
 	local success, latestVersionInfo = pcall(function() 
-		local versionJson = game:HttpGet('https://storage.iyr.lol/legacy-iyr/version')
+		local versionJson = game:HttpGet('https://pkplaysrblx.github.io/moonyield_info.mydevs')
 		return HttpService:JSONDecode(versionJson)
 	end)
 
 	if success then
 		if currentVersion ~= latestVersionInfo.Version then
-			notify('Outdated','Get the new version by executing it again (or rejoin if keepiy is enabled)')
+				notify('Bro','Bro, your moon yield is outdated fam. idk where you got it but you better updatae it')
 		end
 
 		if latestVersionInfo.Announcement and latestVersionInfo.Announcement ~= '' then
@@ -13937,7 +13936,7 @@ task.spawn(function()
 	IntroBackground:Destroy()
 	minimizeHolder()
 	if IsOnMobile then
-		notify("Moon Client has loaded. Made by pkplaysrblx!")
+		notify("Moon Client has loaded. Made by pkplaysrblx! And credits to FB_Real!")
 		if game.PlaceId == 574746640 then
 			task.wait(3)
 			notify("4nn1's Place","Game Detected! Some commands were added/changed/removed")
