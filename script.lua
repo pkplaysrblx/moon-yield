@@ -4898,7 +4898,6 @@ CMDs[#CMDs + 1] = {NAME = "vulnspatch / vpatcher / vulnspatcher", DESC = 'Attemp
 CMDs[#CMDs + 1] = {NAME = 'chatspy', DESC = 'Loads chatspy.'}
 CMDs[#CMDs + 1] = {NAME = 'sspy', DESC = 'Loads simplespy (mobile compatiable also)'}
 CMDs[#CMDs + 1] = {NAME = 'rainbow', DESC = 'turns the thingy rainbow'}
-CMDs[#CMDs + 1] = {NAME = 'fakechat / fc', DESC = 'fake chats'}
 CMDs[#CMDs + 1] = {NAME = 'dragchat / chatdrag', DESC = 'fake chats'}
 task.wait()
 
@@ -13646,7 +13645,6 @@ addcmd('ssppy',{},function(args, speaker)
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/pkplaysrblx/simplespyrblx/main/SimpleSpy/source"))("SimpleSpy")
 end)
 
--- Command to create a rainbow effect on both Holder and Dark UI elements
 addcmd('rainbow',{},function(args, speaker)
 
     while true do
@@ -13661,17 +13659,6 @@ addcmd('rainbow',{},function(args, speaker)
     end
 end)
 
-addcmd('fakechat',{'fc'},function(args, speaker)
-game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(
-					utf8.char(11774):rep(27 + #game.Players.LocalPlayer.Name)
-						.. "["
-						.. args[1]
-						.. "]"
-						.. ": "
-						.. args[2],
-					"All"
-				)
-end)
 
 addcmd('dragchat',{'chatdrag'},function(args, speaker)
 repeat wait() until game:IsLoaded()
