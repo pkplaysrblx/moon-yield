@@ -1,197 +1,292 @@
-local function notif(text)
-	game.StarterGui:SetCore("SendNotification", {Title = "Moon Yield Loader", Text = text})
-end
--- Gui to Lua
--- Version: 3.2
+if isfile("moonyield/auth.moonyield.rak") then
+	return "run the installer bruv"
+	else
 
--- Instances:
+-- Instances: 23 | Scripts: 5 | Modules: 0 | Tags: 0
+local MYInstaller = {};
 
-local MoonYieldInstaller = Instance.new("ScreenGui")
-local InstallerFrame = Instance.new("Frame")
-local Frame = Instance.new("Frame")
-local UIGradient = Instance.new("UIGradient")
-local UIGradient_2 = Instance.new("UIGradient")
-local _2q3216498123 = Instance.new("TextLabel")
-local UIGradient_3 = Instance.new("UIGradient")
-local _3x63984667999 = Instance.new("TextLabel")
-local Options_783274982 = Instance.new("TextButton")
-local OptionsFrame = Instance.new("Frame")
-local Frame_2 = Instance.new("Frame")
-local UIGradient_4 = Instance.new("UIGradient")
-local UIGradient_5 = Instance.new("UIGradient")
-local _9b72358729332 = Instance.new("TextLabel")
-local UIGradient_6 = Instance.new("UIGradient")
-local NV_12987432087 = Instance.new("TextButton")
+-- StarterGui.MoonYieldInstaller
+MYInstaller["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+MYInstaller["1"]["Name"] = [[MoonYieldInstaller]];
+MYInstaller["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+MYInstaller["1"]["ResetOnSpawn"] = false;
 
---Properties:
 
-MoonYieldInstaller.Name = "MoonYieldInstaller"
-MoonYieldInstaller.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-MoonYieldInstaller.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+-- StarterGui.MoonYieldInstaller.Interface
+MYInstaller["2"] = Instance.new("Frame", MYInstaller["1"]);
+MYInstaller["2"]["BorderSizePixel"] = 0;
+MYInstaller["2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+MYInstaller["2"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+MYInstaller["2"]["Size"] = UDim2.new(0, 481, 0, 350);
+MYInstaller["2"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+MYInstaller["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+MYInstaller["2"]["Name"] = [[Interface]];
 
-InstallerFrame.Name = "InstallerFrame"
-InstallerFrame.Parent = MoonYieldInstaller
-InstallerFrame.BackgroundColor3 = Color3.fromRGB(2, 99, 255)
-InstallerFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-InstallerFrame.BorderSizePixel = 0
-InstallerFrame.Position = UDim2.new(0.282249182, 0, 0.266025633, 0)
-InstallerFrame.Size = UDim2.new(0, 457, 0, 291)
 
-Frame.Parent = InstallerFrame
-Frame.BackgroundColor3 = Color3.fromRGB(1, 36, 94)
-Frame.BackgroundTransparency = 0.400
-Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Frame.BorderSizePixel = 0
-Frame.Position = UDim2.new(0.427375495, 0, 0.104258955, 0)
-Frame.Rotation = 90.000
-Frame.Size = UDim2.new(0, 291, 0, 231)
+-- StarterGui.MoonYieldInstaller.Interface.UIStroke
+MYInstaller["3"] = Instance.new("UIStroke", MYInstaller["2"]);
+MYInstaller["3"]["Thickness"] = 5;
+MYInstaller["3"]["Color"] = Color3.fromRGB(255, 255, 255);
 
-UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(1, 60, 254)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(1, 37, 186))}
-UIGradient.Parent = Frame
 
-UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(1, 60, 254)), ColorSequenceKeypoint.new(0.48, Color3.fromRGB(40, 56, 112)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
-UIGradient_2.Parent = InstallerFrame
+-- StarterGui.MoonYieldInstaller.Interface.UIStroke.UIGradient
+MYInstaller["4"] = Instance.new("UIGradient", MYInstaller["3"]);
+MYInstaller["4"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 0, 0)),ColorSequenceKeypoint.new(0.166, Color3.fromRGB(255, 255, 0)),ColorSequenceKeypoint.new(0.330, Color3.fromRGB(0, 255, 0)),ColorSequenceKeypoint.new(0.500, Color3.fromRGB(0, 255, 255)),ColorSequenceKeypoint.new(0.660, Color3.fromRGB(0, 0, 255)),ColorSequenceKeypoint.new(0.833, Color3.fromRGB(255, 0, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(255, 0, 0))};
 
-_2q3216498123.Name = "_2q3216498123"
-_2q3216498123.Parent = InstallerFrame
-_2q3216498123.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-_2q3216498123.BackgroundTransparency = 1.000
-_2q3216498123.BorderColor3 = Color3.fromRGB(0, 0, 0)
-_2q3216498123.BorderSizePixel = 0
-_2q3216498123.Size = UDim2.new(0, 457, 0, 46)
-_2q3216498123.Font = Enum.Font.GothamBold
-_2q3216498123.Text = "Moon Yield - Installer"
-_2q3216498123.TextColor3 = Color3.fromRGB(255, 255, 255)
-_2q3216498123.TextScaled = true
-_2q3216498123.TextSize = 14.000
-_2q3216498123.TextStrokeTransparency = 0.000
-_2q3216498123.TextWrapped = true
 
-UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(1, 60, 254)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(1, 37, 186))}
-UIGradient_3.Rotation = -89
-UIGradient_3.Parent = _2q3216498123
+-- StarterGui.MoonYieldInstaller.Interface.PutThisAfter
+MYInstaller["5"] = Instance.new("LocalScript", MYInstaller["2"]);
+MYInstaller["5"]["Name"] = [[PutThisAfter]];
 
-_3x63984667999.Name = "_3x63984667999"
-_3x63984667999.Parent = InstallerFrame
-_3x63984667999.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-_3x63984667999.BackgroundTransparency = 1.000
-_3x63984667999.BorderColor3 = Color3.fromRGB(0, 0, 0)
-_3x63984667999.BorderSizePixel = 0
-_3x63984667999.Position = UDim2.new(0.0284463894, 0, 0.158075601, 0)
-_3x63984667999.Size = UDim2.new(0, 430, 0, 14)
-_3x63984667999.Font = Enum.Font.GothamBold
-_3x63984667999.Text = "by pkplaysrblx!"
-_3x63984667999.TextColor3 = Color3.fromRGB(255, 255, 255)
-_3x63984667999.TextScaled = true
-_3x63984667999.TextSize = 14.000
-_3x63984667999.TextWrapped = true
 
-Options_783274982.Name = "Options_783274982"
-Options_783274982.Parent = InstallerFrame
-Options_783274982.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Options_783274982.BackgroundTransparency = 0.900
-Options_783274982.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Options_783274982.BorderSizePixel = 0
-Options_783274982.Position = UDim2.new(0.280087531, 0, 0.347079039, 0)
-Options_783274982.Size = UDim2.new(0, 200, 0, 89)
-Options_783274982.Font = Enum.Font.GothamBold
-Options_783274982.Text = "Options"
-Options_783274982.TextColor3 = Color3.fromRGB(255, 255, 255)
-Options_783274982.TextScaled = true
-Options_783274982.TextSize = 14.000
-Options_783274982.TextStrokeTransparency = 0.000
-Options_783274982.TextWrapped = true
+-- StarterGui.MoonYieldInstaller.Interface.Title
+MYInstaller["6"] = Instance.new("TextLabel", MYInstaller["2"]);
+MYInstaller["6"]["TextWrapped"] = true;
+MYInstaller["6"]["BorderSizePixel"] = 0;
+MYInstaller["6"]["TextScaled"] = true;
+MYInstaller["6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+MYInstaller["6"]["TextSize"] = 14;
+MYInstaller["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+MYInstaller["6"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+MYInstaller["6"]["BackgroundTransparency"] = 1;
+MYInstaller["6"]["Size"] = UDim2.new(0, 481, 0, 52);
+MYInstaller["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+MYInstaller["6"]["Text"] = [[Moon Yield Installer]];
+MYInstaller["6"]["Name"] = [[Title]];
 
-OptionsFrame.Name = "OptionsFrame"
-OptionsFrame.Parent = MoonYieldInstaller
-OptionsFrame.BackgroundColor3 = Color3.fromRGB(2, 99, 255)
-OptionsFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-OptionsFrame.BorderSizePixel = 0
-OptionsFrame.Position = UDim2.new(0.282249182, 0, 0.266025633, 0)
-OptionsFrame.Size = UDim2.new(0, 457, 0, 291)
-OptionsFrame.Visible = false
 
-Frame_2.Parent = OptionsFrame
-Frame_2.BackgroundColor3 = Color3.fromRGB(1, 36, 94)
-Frame_2.BackgroundTransparency = 0.356
-Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Frame_2.BorderSizePixel = 0
-Frame_2.Position = UDim2.new(0.427375495, 0, 0.104258955, 0)
-Frame_2.Rotation = 90.000
-Frame_2.Size = UDim2.new(0, 291, 0, 231)
+-- StarterGui.MoonYieldInstaller.Interface.Title.UIGradient
+MYInstaller["7"] = Instance.new("UIGradient", MYInstaller["6"]);
+MYInstaller["7"]["Rotation"] = 133;
+MYInstaller["7"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 0, 191)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 0, 85))};
 
-UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(1, 60, 254)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(1, 37, 186))}
-UIGradient_4.Parent = Frame_2
 
-UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(1, 60, 254)), ColorSequenceKeypoint.new(0.48, Color3.fromRGB(40, 56, 112)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
-UIGradient_5.Parent = OptionsFrame
+-- StarterGui.MoonYieldInstaller.Interface.Title.PutThisAfter
+MYInstaller["8"] = Instance.new("LocalScript", MYInstaller["6"]);
+MYInstaller["8"]["Name"] = [[PutThisAfter]];
 
-_9b72358729332.Name = "_9b72358729332"
-_9b72358729332.Parent = OptionsFrame
-_9b72358729332.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-_9b72358729332.BackgroundTransparency = 1.000
-_9b72358729332.BorderColor3 = Color3.fromRGB(0, 0, 0)
-_9b72358729332.BorderSizePixel = 0
-_9b72358729332.Size = UDim2.new(0, 457, 0, 46)
-_9b72358729332.Font = Enum.Font.GothamBold
-_9b72358729332.Text = "Options - Moon Yield"
-_9b72358729332.TextColor3 = Color3.fromRGB(255, 255, 255)
-_9b72358729332.TextScaled = true
-_9b72358729332.TextSize = 14.000
-_9b72358729332.TextStrokeTransparency = 0.000
-_9b72358729332.TextWrapped = true
 
-UIGradient_6.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(1, 60, 254)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(1, 37, 186))}
-UIGradient_6.Rotation = -89
-UIGradient_6.Parent = _9b72358729332
+-- StarterGui.MoonYieldInstaller.Interface.Divider
+MYInstaller["9"] = Instance.new("Frame", MYInstaller["2"]);
+MYInstaller["9"]["ZIndex"] = 901;
+MYInstaller["9"]["BorderSizePixel"] = 0;
+MYInstaller["9"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+MYInstaller["9"]["Size"] = UDim2.new(0.8, 0, 0, 1);
+MYInstaller["9"]["Position"] = UDim2.new(0.09979, 0, 0.14857, 0);
+MYInstaller["9"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+MYInstaller["9"]["Name"] = [[Divider]];
+MYInstaller["9"]["LayoutOrder"] = 3;
+MYInstaller["9"]["BackgroundTransparency"] = 0.8;
 
-NV_12987432087.Name = "NV_12987432087"
-NV_12987432087.Parent = OptionsFrame
-NV_12987432087.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-NV_12987432087.BackgroundTransparency = 0.900
-NV_12987432087.BorderColor3 = Color3.fromRGB(0, 0, 0)
-NV_12987432087.BorderSizePixel = 0
-NV_12987432087.Position = UDim2.new(0.280087531, 0, 0.567010283, 0)
-NV_12987432087.Size = UDim2.new(0, 200, 0, 89)
-NV_12987432087.Font = Enum.Font.GothamBold
-NV_12987432087.Text = "Normal Version"
-NV_12987432087.TextColor3 = Color3.fromRGB(255, 255, 255)
-NV_12987432087.TextScaled = true
-NV_12987432087.TextSize = 14.000
-NV_12987432087.TextStrokeTransparency = 0.000
-NV_12987432087.TextWrapped = true
 
--- Scripts:
+-- StarterGui.MoonYieldInstaller.Interface.TXT_23621837
+MYInstaller["a"] = Instance.new("TextLabel", MYInstaller["2"]);
+MYInstaller["a"]["TextWrapped"] = true;
+MYInstaller["a"]["BorderSizePixel"] = 0;
+MYInstaller["a"]["TextScaled"] = true;
+MYInstaller["a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+MYInstaller["a"]["TextSize"] = 14;
+MYInstaller["a"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+MYInstaller["a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+MYInstaller["a"]["BackgroundTransparency"] = 1;
+MYInstaller["a"]["Size"] = UDim2.new(0, 458, 0, 38);
+MYInstaller["a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+MYInstaller["a"]["Text"] = [[Welcome to Moon Yield, the IYR mod!]];
+MYInstaller["a"]["Name"] = [[TXT_23621837]];
+MYInstaller["a"]["Position"] = UDim2.new(0.02287, 0, 0.18, 0);
 
-local function DKBA_fake_script() -- Options_783274982.LocalScript 
-	local script = Instance.new('LocalScript', Options_783274982)
 
-	script.Parent.Parent['Options_783274982'].MouseButton1Down:Connect(function()
-		game['Players']['LocalPlayer']['PlayerGui']['MoonYieldInstaller']['InstallerFrame'].Visible = false
-		game['Players']['LocalPlayer']['PlayerGui']['MoonYieldInstaller']['OptionsFrame'].Visible = true
+-- StarterGui.MoonYieldInstaller.Interface.TXT_23621837.UIGradient
+MYInstaller["b"] = Instance.new("UIGradient", MYInstaller["a"]);
+MYInstaller["b"]["Rotation"] = 133;
+MYInstaller["b"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 0, 191)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 0, 85))};
+
+
+-- StarterGui.MoonYieldInstaller.Interface.TXT_3472384
+MYInstaller["c"] = Instance.new("TextLabel", MYInstaller["2"]);
+MYInstaller["c"]["TextWrapped"] = true;
+MYInstaller["c"]["BorderSizePixel"] = 0;
+MYInstaller["c"]["TextScaled"] = true;
+MYInstaller["c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+MYInstaller["c"]["TextSize"] = 14;
+MYInstaller["c"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+MYInstaller["c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+MYInstaller["c"]["BackgroundTransparency"] = 1;
+MYInstaller["c"]["Size"] = UDim2.new(0, 458, 0, 61);
+MYInstaller["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+MYInstaller["c"]["Text"] = [[To install, click the button below to install with RAK]];
+MYInstaller["c"]["Name"] = [[TXT_3472384]];
+MYInstaller["c"]["Position"] = UDim2.new(0.02287, 0, 0.28857, 0);
+
+
+-- StarterGui.MoonYieldInstaller.Interface.TXT_3472384.UIGradient
+MYInstaller["d"] = Instance.new("UIGradient", MYInstaller["c"]);
+MYInstaller["d"]["Rotation"] = 133;
+MYInstaller["d"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 0, 191)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 0, 85))};
+
+
+-- StarterGui.MoonYieldInstaller.Interface.TXT_3472384.LocalScript
+MYInstaller["e"] = Instance.new("LocalScript", MYInstaller["c"]);
+
+
+
+-- StarterGui.MoonYieldInstaller.Interface.Install
+MYInstaller["f"] = Instance.new("TextButton", MYInstaller["2"]);
+MYInstaller["f"]["TextWrapped"] = true;
+MYInstaller["f"]["BorderSizePixel"] = 0;
+MYInstaller["f"]["TextSize"] = 14;
+MYInstaller["f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+MYInstaller["f"]["TextScaled"] = true;
+MYInstaller["f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+MYInstaller["f"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+MYInstaller["f"]["Size"] = UDim2.new(0, 199, 0, 138);
+MYInstaller["f"]["BackgroundTransparency"] = 0.9;
+MYInstaller["f"]["Name"] = [[Install]];
+MYInstaller["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+MYInstaller["f"]["Text"] = [[Install]];
+MYInstaller["f"]["Position"] = UDim2.new(0.29314, 0, 0.55714, 0);
+
+
+-- StarterGui.MoonYieldInstaller.Interface.Install.UICorner
+MYInstaller["10"] = Instance.new("UICorner", MYInstaller["f"]);
+
+
+
+-- StarterGui.MoonYieldInstaller.Interface.Install.UIStroke
+MYInstaller["11"] = Instance.new("UIStroke", MYInstaller["f"]);
+
+
+
+-- StarterGui.MoonYieldInstaller.Interface.Install.UIGradient
+MYInstaller["12"] = Instance.new("UIGradient", MYInstaller["f"]);
+MYInstaller["12"]["Rotation"] = 90;
+MYInstaller["12"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 0, 255))};
+
+
+-- StarterGui.MoonYieldInstaller.Interface.Install.LocalScript
+MYInstaller["13"] = Instance.new("LocalScript", MYInstaller["f"]);
+
+
+
+-- StarterGui.MoonYieldInstaller.Interface.UIGradient
+MYInstaller["14"] = Instance.new("UIGradient", MYInstaller["2"]);
+MYInstaller["14"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 0, 255))};
+
+
+-- StarterGui.MoonYieldInstaller.Interface.Grid
+MYInstaller["15"] = Instance.new("ImageLabel", MYInstaller["2"]);
+MYInstaller["15"]["BorderSizePixel"] = 0;
+MYInstaller["15"]["BackgroundColor3"] = Color3.fromRGB(31, 31, 31);
+MYInstaller["15"]["ScaleType"] = Enum.ScaleType.Tile;
+MYInstaller["15"]["ImageTransparency"] = 0.95;
+MYInstaller["15"]["Image"] = [[rbxassetid://6372755229]];
+MYInstaller["15"]["TileSize"] = UDim2.new(0, 30, 0, 30);
+MYInstaller["15"]["Size"] = UDim2.new(1, 0, 1, 0);
+MYInstaller["15"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+MYInstaller["15"]["BackgroundTransparency"] = 1;
+MYInstaller["15"]["Name"] = [[Grid]];
+
+
+-- StarterGui.MoonYieldInstaller.Intro
+MYInstaller["16"] = Instance.new("Sound", MYInstaller["1"]);
+MYInstaller["16"]["Name"] = [[Intro]];
+MYInstaller["16"]["SoundId"] = [[rbxassetid://124494424803907]];
+
+
+-- StarterGui.MoonYieldInstaller.Intro.LocalScript
+MYInstaller["17"] = Instance.new("LocalScript", MYInstaller["16"]);
+
+
+
+-- StarterGui.MoonYieldInstaller.Interface.PutThisAfter
+local function C_5()
+local script = MYInstaller["5"];
+	local Gradient = script.Parent.UIStroke.UIGradient
+	local RunService = game["Run Service"]
+	
+	RunService.RenderStepped:Connect(function()
+		Gradient.Rotation += 1
 	end)
-end
-coroutine.wrap(DKBA_fake_script)()
-local function KKVIKV_fake_script() -- NV_12987432087.LocalScript 
-	local script = Instance.new('LocalScript', NV_12987432087)
-
-	script.Parent.Parent['NV_12987432087'].MouseButton1Down:Connect(function()
-		if not isfolder("moonyield") and not isfile("moonyield/script.lua") then
-			makefolder("moonyield")
-			writefile("moonyield/script.lua", "loadstring(game:HttpGet('https://raw.githubusercontent.com/pkplaysrblx/moon-yield/refs/heads/main/script.lua'))()")
-			game['Players']['LocalPlayer'].PlayerGui.MoonYieldInstaller:Destroy()
-			notif("Finished installing.")
-			notif("Please run this code!\nloadfile('moonyield/script.lua')()")
-		else if isfolder("moonyield") and isfile("moonyield/script.lua") then
-				delfile("moonyield/script.lua")
-				wait(2)
-				writefile("moonyield/script.lua", "loadstring(game:HttpGet('https://raw.githubusercontent.com/pkplaysrblx/moon-yield/refs/heads/main/script.lua'))()")
-				game['Players']['LocalPlayer'].PlayerGui.MoonYieldInstaller:Destroy()
-				notif("Finished installing.")
-				notif("Please run this code!\nloadfile('moonyield/script.lua')()")
-			end
+	
+	local Console = {}
+	
+	function Console:PrintLoader()
+		local a = [[
+		╭=================================╮
+	    ┃ Moon Yield Installer            ┃
+	    ┃ ================================┃
+	    ┃ Hello there, Robloxian!         ┃
+		┃                                 ┃
+		┃ Thank you for using Moon Yield! ┃
+		┃ It is a pleasure to create this ┃
+		┃ script for exploiters. This is  ┃
+		┃ a IYR mod. Credits to FB_Real!  ┃
+		┃                    - pkplaysrblx┃
+		╰=================================╯
+		]]
+		print("\n".. a)
+	end
+	
+	Console:PrintLoader()
+end;
+task.spawn(C_5);
+-- StarterGui.MoonYieldInstaller.Interface.Title.PutThisAfter
+local function C_8()
+local script = MYInstaller["8"];
+	local Gradient = script.Parent.UIGradient
+	local RunService = game["Run Service"]
+	
+	RunService.RenderStepped:Connect(function()
+		Gradient.Rotation += 1
+	end)
+end;
+task.spawn(C_8);
+-- StarterGui.MoonYieldInstaller.Interface.TXT_3472384.LocalScript
+local function C_e()
+local script = MYInstaller["e"];
+	script.Parent.Text = "To install, click the button below to install with RAK.\n[The following scripts have been removed due to some issues with loading the file and reading it: loadfile, writefile, delfile]"
+end;
+task.spawn(C_e);
+-- StarterGui.MoonYieldInstaller.Interface.Install.LocalScript
+local function C_13()
+local script = MYInstaller["13"];
+	local Gradient = script.Parent.UIGradient
+	local RunService = game:GetService("RunService")
+	local Button = script.Parent
+	
+	RunService.RenderStepped:Connect(function()
+		Gradient.Rotation = (Gradient.Rotation + 5) % 360
+	end)
+	
+	Button.MouseButton1Down:Connect(function()
+		for percent_finished = 1, 100 do
+			Button.Text = percent_finished .. "%"
+			task.wait(0.05)
 		end
+		
+		if isfile("moonyield/script.lua") then
+			delfile("moonyield/script.lua")
+			writefile("moonyield/auth.moonyield.rak", game:GetService('RbxAnalyticsService'):GetClientId())
+		end
+		
+		Button.Text = "Finished!"
+		task.wait(2)
+	
+		Button.Text = "Exiting..."
+		task.wait(math.random(1, 5))
+		
+		script.Parent.Parent.Parent.Parent.MoonYieldInstaller:Destroy()
 	end)
-end
-coroutine.wrap(KKVIKV_fake_script)()
+	
+end;
+task.spawn(C_13);
+-- StarterGui.MoonYieldInstaller.Intro.LocalScript
+local function C_17()
+local script = MYInstaller["17"];
+	script.Parent:play()
+end;
+task.spawn(C_17);
 
+return MYInstaller["1"], require;
+
+end
