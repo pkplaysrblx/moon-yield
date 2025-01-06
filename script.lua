@@ -3214,8 +3214,8 @@ end
 run installer.lua
 ]]
 
-if not isfolder("moonyield") and not isfile("moonyield/script.lua") then
-game.Players.LocalPlayer:Kick("Please run the installer! If you have, run loadfile('moonyield/script.lua')(). If you think this was a mistake, please create an issue.")
+if not isfolder("moonyield") and not isfile("moonyield/auth.moonyield.rak") then
+game.Players.LocalPlayer:Kick("The file (moonyield/auth.moonyield.rak) does not exist! Please install from the repo.")
 end
 
 local lastMessage = nil
