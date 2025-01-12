@@ -3215,6 +3215,7 @@ run installer.lua
 ]]
 
 if not isfolder("moonyield") and not isfile("moonyield/auth.moonyield.rak") then
+setclipboard("loadstring(game:HttpGet('https://github.com/pkplaysrblx/moon-yield/raw/refs/heads/main/installer.lua'))()")
 game.Players.LocalPlayer:Kick("The file (moonyield/auth.moonyield.rak) does not exist! Please install from the repo.")
 end
 
@@ -4898,7 +4899,8 @@ CMDs[#CMDs + 1] = {NAME = "vulnspatch / vpatcher / vulnspatcher", DESC = 'Attemp
 CMDs[#CMDs + 1] = {NAME = 'chatspy', DESC = 'Loads chatspy.'}
 CMDs[#CMDs + 1] = {NAME = 'sspy', DESC = 'Loads simplespy (mobile compatiable also)'}
 CMDs[#CMDs + 1] = {NAME = 'rainbow', DESC = 'turns the thingy rainbow'}
-CMDs[#CMDs + 1] = {NAME = 'dragchat / chatdrag', DESC = 'fake chats'}
+CMDs[#CMDs + 1] = {NAME = 'dragchat / chatdrag', DESC = 'drags the chat'}
+CMDs[#CMDs + 1] = {NAME = 'bypassadonisanticheat / bypassadonis', DESC = 'Bypasses adonis anti cheat'}
 task.wait()
 
 for i = 1, #CMDs do
@@ -12944,6 +12946,66 @@ end)
 
 addcmd('untpwalk', {'unteleportwalk'}, function(args, speaker)
 	tpwalking = false
+end)
+
+addcmd('bypassadonisanticheat',{'bypassadonis'},function(args, speaker)
+	local getinfo = getinfo or debug.getinfo
+local DEBUG = false
+local Hooked = {}
+ 
+local Detected, Kill
+ 
+setthreadidentity(2)
+ 
+for i, v in getgc(true) do
+    if typeof(v) == "table" then
+        local DetectFunc = rawget(v, "Detected")
+        local KillFunc = rawget(v, "Kill")
+ 
+        if typeof(DetectFunc) == "function" and not Detected then
+            Detected = DetectFunc
+ 
+            local Old; Old = hookfunction(Detected, function(Action, Info, NoCrash)
+                if Action ~= "_" then
+                    if DEBUG then
+                        warn(`Adonis AntiCheat flagged\nMethod: {Action}\nInfo: {Info}`)
+                    end
+                end
+ 
+                return true
+            end)
+ 
+            table.insert(Hooked, Detected)
+        end
+ 
+        if rawget(v, "Variables") and rawget(v, "Process") and typeof(KillFunc) == "function" and not Kill then
+            Kill = KillFunc
+            local Old; Old = hookfunction(Kill, function(Info)
+                if DEBUG then
+                    warn(`Adonis AntiCheat tried to kill (fallback): {Info}`)
+                end
+            end)
+ 
+            table.insert(Hooked, Kill)
+        end
+    end
+end
+ 
+local Old; Old = hookfunction(getrenv().debug.info, newcclosure(function(...)
+    local LevelOrFunc, Info = ...
+ 
+    if Detected and LevelOrFunc == Detected then
+        if DEBUG then
+            warn(`[MOON_YIELD_DEBUG]: Bypassed Adonis`)
+        end
+ 
+        return coroutine.yield(coroutine.running())
+    end
+ 
+    return Old(...)
+end))
+-- setthreadidentity(9)
+setthreadidentity(7)
 end)
 
 task.spawn(function()
