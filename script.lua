@@ -4901,6 +4901,10 @@ CMDs[#CMDs + 1] = {NAME = 'sspy', DESC = 'Loads simplespy (mobile compatiable al
 CMDs[#CMDs + 1] = {NAME = 'rainbow', DESC = 'turns the thingy rainbow'}
 CMDs[#CMDs + 1] = {NAME = 'dragchat / chatdrag', DESC = 'drags the chat'}
 CMDs[#CMDs + 1] = {NAME = 'bypassadonisanticheat / bypassadonis', DESC = 'Bypasses adonis anti cheat'}
+CMDs[#CMDs + 1] = {NAME = 'solaradex', DESC = 'made by wyvern and inspired from iyr bc i dont have ideas'}
+CMDs[#CMDs + 1] = {NAME = 'synsaveinstance / saveinstancegui', DESC = 'Loads up synsaveinstance GUI'}
+CMDs[#CMDs + 1] = {NAME = 'uncgui', DESC = 'Loads up UNC but is a GUI'}
+CMDs[#CMDs + 1] = {NAME = 'stealgui [PATH]', DESC = 'steals gui'}
 task.wait()
 
 for i = 1, #CMDs do
@@ -13707,6 +13711,10 @@ addcmd('ssppy',{},function(args, speaker)
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/pkplaysrblx/simplespyrblx/main/SimpleSpy/source"))("SimpleSpy")
 end)
 
+addcmd('solaradex',{},function(args, speaker)
+	loadstring(game:HttpGet("https://wyvernexploits.github.io/scripts/solara-dex.lua"))("main/github/pages")
+end)
+
 addcmd('rainbow',{},function(args, speaker)
 
     while true do
@@ -13725,6 +13733,20 @@ end)
 addcmd('dragchat',{'chatdrag'},function(args, speaker)
 repeat wait() until game:IsLoaded()
 local c =game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):WaitForChild("Chat"):FindFirstChildWhichIsA("Frame");c.Active = true;c.Draggable=true
+end)
+
+addcmd('synsaveinstance',{'saveinstancegui'},function(args, speaker)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/24rr/tmpignore/refs/heads/main/32423sadf133"))()
+end)
+
+addcmd('uncgui',{},function(args, speaker)
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-UNChecker-GUI-Version-27355"))()
+end)
+
+addcmd('stealgui',{},function(args, speaker)
+	local StealGUI = loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-GuiStealer-12751", true))()
+	local ToSteal = tostring(args[1])
+	writefile('moon-yield.stolen-gui.lua', StealGUI(game.Players.LocalPlayer.PlayerGui:FindFirstChild(ToSteal)))
 end)
 
 if IsOnMobile then
@@ -13882,7 +13904,7 @@ task.spawn(function()
 
 	if success then
 		if currentVersion ~= latestVersionInfo.Version then
-				notify('Bro','Bro, your moon yield is outdated fam. idk where you got it but you better updatae it')
+				notify('pog error','yo moon yield is outdated fam. idk where you got it but you better update it')
 		end
 
 		if latestVersionInfo.Announcement and latestVersionInfo.Announcement ~= '' then
