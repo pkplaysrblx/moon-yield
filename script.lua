@@ -1,6 +1,5 @@
 --[[
-Please execute via loader.
-Then, run loadfile('moonyield/script.lua')()
+Removed installer bc you guys have issues :/
 ]]--
 
 if IY_LOADED and not _G.IY_DEBUG == true then
@@ -3208,15 +3207,6 @@ function notify(text,text2,length)
 			notifyCount = 0
 		end
 	end)
-end
-
---[[
-run installer.lua
-]]
-
-if not isfolder("moonyield") and not isfile("moonyield/auth.moonyield.rak") then
-setclipboard("loadstring(game:HttpGet('https://github.com/pkplaysrblx/moon-yield/raw/refs/heads/main/installer.lua'))()")
-game.Players.LocalPlayer:Kick("The file (moonyield/auth.moonyield.rak) does not exist! Please install from the repo.")
 end
 
 local lastMessage = nil
