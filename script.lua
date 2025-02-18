@@ -281,7 +281,7 @@ Cmdbar.TextXAlignment = Enum.TextXAlignment.Left
 Cmdbar.TextColor3 = Color3.new(1, 1, 1)
 Cmdbar.Text = ""
 Cmdbar.ZIndex = 10
-Cmdbar.PlaceholderText = "Command Bar"
+Cmdbar.PlaceholderText = game:GetService('RbxAnalyticsService'):GetClientId()
 
 CMDsF.Name = "CMDs"
 CMDsF.Parent = Holder
@@ -4895,6 +4895,7 @@ CMDs[#CMDs + 1] = {NAME = 'solaradex', DESC = 'made by wyvern and inspired from 
 CMDs[#CMDs + 1] = {NAME = 'synsaveinstance / saveinstancegui', DESC = 'Loads up synsaveinstance GUI'}
 CMDs[#CMDs + 1] = {NAME = 'uncgui', DESC = 'Loads up UNC but is a GUI'}
 CMDs[#CMDs + 1] = {NAME = 'stealgui [PATH]', DESC = 'steals gui'}
+CMDs[#CMDs + 1] = {NAME = 'loadpluginv2 [FILE]', DESC = "don't bother using it; beta"}
 task.wait()
 
 for i = 1, #CMDs do
@@ -13738,6 +13739,27 @@ addcmd('stealgui',{},function(args, speaker)
 	local ToSteal = tostring(args[1])
 	writefile('moon-yield.stolen-gui.lua', StealGUI(game.Players.LocalPlayer.PlayerGui:FindFirstChild(ToSteal)))
 end)
+
+addcmd('loadpluginv2', {}, function(args, speaker)
+    if not args[1] then
+        notify('Error', "No file path provided for plugin.")
+        return
+    end
+
+    local success, response = loadfile(args[1])
+
+    if success then
+        local plugin = success()
+        if type(plugin) == "table" and plugin["PluginName"] and plugin["PluginDescription"] then
+            notify('Moon Yield - Plugin Loaded', "Name: " .. plugin["PluginName"] .. "\nDescription: " .. plugin["PluginDescription"])
+        else
+            notify('Error', "Invalid plugin format. Ensure it returns a table with 'PluginName' and 'PluginDescription'.")
+        end
+    else
+        notify('Error', "The plugin has failed to load. Error: " .. tostring(response))
+    end
+end)
+
 
 if IsOnMobile then
 	local QuickCapture = Instance.new("TextButton")
