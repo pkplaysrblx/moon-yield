@@ -4450,6 +4450,7 @@ spawn(function()
 end)
 
 CMDs = {}
+CMDs[#CMDs + 1] = {NAME = '-- MOON YIELD MODIFICATIONS', DESC = 'Mods for Moon Yield!'}
 CMDs[#CMDs + 1] = {NAME = 'discord / dc', DESC = 'Invite to the Discord server.'}
 CMDs[#CMDs + 1] = {NAME = 'console', DESC = 'Loads old Roblox console'}
 CMDs[#CMDs + 1] = {NAME = 'unc / unctest / unccheckevn', DESC = 'Tests all UNC Environment'}
@@ -6471,7 +6472,7 @@ local TeleportCheck = false
 Players.LocalPlayer.OnTeleport:Connect(function(State)
 	if KeepInfYield and (not TeleportCheck) and queueteleport then
 		TeleportCheck = true
-		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/fuckusfm/infiniteyield-reborn/master/source'))()")
+		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/pkplaysrblx/moon-yield/master/script.lua'))()")
 	end
 end)
 
@@ -6514,6 +6515,35 @@ addcmd('clraliases',{},function(args, speaker)
 	notify('Aliases Modified','Removed all aliases')
 	updatesaves()
 	refreshaliases()
+end)
+
+addcmd('rainbow',{},function(args, speaker)
+
+    while true do
+        for hue = 0, 255, 4 do
+            Holder.BorderColor3 = Color3.fromHSV(hue / 256, 1, 1)
+            Holder.BackgroundColor3 = Color3.fromHSV(hue / 256, 0.5, 0.8)
+            Dark.BorderColor3 = Color3.fromHSV(hue / 256, 1, 1)
+            Dark.BackgroundColor3 = Color3.fromHSV(hue / 256, 0.5, 0.8)
+            
+            task.wait(0.1)
+        end
+    end
+end)
+
+addcmd('deletemoonyield',{'dmy'},function(args, speaker)
+	getgenv().IY_LOADED = false
+	Holder:Destroy()
+end)
+
+addcmd('moreinstances',{'allowmoreinstances'},function(args, speaker)
+	notify("Moon Yield", "Successfully allowed more instances.")
+	getgenv().IY_LOADED = false
+end)
+
+addcmd('removeallowinstances',{'removeinstances'},function(args, speaker)
+	notify("Moon Yield", "Successfully removed the function 'allowmoreinstances'.")
+	getgenv().IY_LOADED = true
 end)
 
 addcmd('discord', {'dc'}, function(args, speaker)
@@ -13690,10 +13720,6 @@ addcmd('removecmd',{'deletecmd'},function(args, speaker)
 	removecmd(args[1])
 end)
 
-addcmd('destroygui',{'destroy'},function(args, speaker)
-	Holder:Destroy()
-end)
-
 addcmd('translator',{'chattranslate'},function(args, speaker)
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/x114/RobloxScripts/main/UpdatedChatTranslator"))()
 end)
@@ -13705,21 +13731,6 @@ end)
 addcmd('solaradex',{},function(args, speaker)
 	loadstring(game:HttpGet("https://wyvernexploits.github.io/scripts/solara-dex.lua"))("main/github/pages")
 end)
-
-addcmd('rainbow',{},function(args, speaker)
-
-    while true do
-        for hue = 0, 255, 4 do
-            Holder.BorderColor3 = Color3.fromHSV(hue / 256, 1, 1)
-            Holder.BackgroundColor3 = Color3.fromHSV(hue / 256, 0.5, 0.8)
-            Dark.BorderColor3 = Color3.fromHSV(hue / 256, 1, 1)
-            Dark.BackgroundColor3 = Color3.fromHSV(hue / 256, 0.5, 0.8)
-            
-            task.wait(0.1)
-        end
-    end
-end)
-
 
 addcmd('dragchat',{'chatdrag'},function(args, speaker)
 repeat wait() until game:IsLoaded()
