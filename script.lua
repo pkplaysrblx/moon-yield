@@ -6543,12 +6543,12 @@ end)
 
 addcmd('moreinstances',{'allowmoreinstances'},function(args, speaker)
 	notify("Moon Yield", "Successfully allowed more instances.")
-	getgenv().IY_LOADED = true
+	getgenv().IY_LOADED = false
 end)
 
 addcmd('removeallowinstances',{'removeinstances'},function(args, speaker)
 	notify("Moon Yield", "Successfully removed the function to 'allowmoreinstances'.")
-	getgenv().IY_LOADED = false
+	getgenv().IY_LOADED = true
 end)
 
 addcmd('discord', {'dc'}, function(args, speaker)
