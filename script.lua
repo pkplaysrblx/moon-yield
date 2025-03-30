@@ -4451,6 +4451,10 @@ end)
 
 CMDs = {}
 CMDs[#CMDs + 1] = {NAME = '-- MOON YIELD MODIFICATIONS', DESC = 'Mods for Moon Yield!'}
+CMDs[#CMDs + 1] = {NAME = 'rainbow', DESC = 'turns the thingy rainbow'}
+CMDs[#CMDs + 1] = {NAME = 'deletemoonyield / dmy', DESC = 'Deletes the current instance of Moon Yield.'}
+CMDs[#CMDs + 1] = {NAME = 'moreinstances / allowmoreinstances', DESC = 'Allows more instances. (IY,IYR,BIY,IYV6 etc.)'}
+CMDs[#CMDs + 1] = {NAME = 'removeinstances / removeallowinstances', DESC = 'Disallows more instances.'}
 CMDs[#CMDs + 1] = {NAME = 'discord / dc', DESC = 'Invite to the Discord server.'}
 CMDs[#CMDs + 1] = {NAME = 'console', DESC = 'Loads old Roblox console'}
 CMDs[#CMDs + 1] = {NAME = 'unc / unctest / unccheckevn', DESC = 'Tests all UNC Environment'}
@@ -4889,7 +4893,6 @@ CMDs[#CMDs + 1] = {NAME = 'unrobloxstaffwatch', DESC = ''}
 CMDs[#CMDs + 1] = {NAME = "vulnspatch / vpatcher / vulnspatcher", DESC = 'Attemps to patch some vulns'}
 CMDs[#CMDs + 1] = {NAME = 'chatspy', DESC = 'Loads chatspy.'}
 CMDs[#CMDs + 1] = {NAME = 'sspy', DESC = 'Loads simplespy (mobile compatiable also)'}
-CMDs[#CMDs + 1] = {NAME = 'rainbow', DESC = 'turns the thingy rainbow'}
 CMDs[#CMDs + 1] = {NAME = 'dragchat / chatdrag', DESC = 'drags the chat'}
 CMDs[#CMDs + 1] = {NAME = 'bypassadonisanticheat / bypassadonis', DESC = 'Bypasses adonis anti cheat'}
 CMDs[#CMDs + 1] = {NAME = 'solaradex', DESC = 'made by wyvern and inspired from iyr bc i dont have ideas'}
@@ -6526,7 +6529,7 @@ addcmd('rainbow',{},function(args, speaker)
             Dark.BorderColor3 = Color3.fromHSV(hue / 256, 1, 1)
             Dark.BackgroundColor3 = Color3.fromHSV(hue / 256, 0.5, 0.8)
             
-            task.wait(0.1)
+            task.wait(0)
         end
     end
 end)
@@ -6534,16 +6537,18 @@ end)
 addcmd('deletemoonyield',{'dmy'},function(args, speaker)
 	getgenv().IY_LOADED = false
 	Holder:Destroy()
+	task.wait(2)
+	Main:Destroy()
 end)
 
 addcmd('moreinstances',{'allowmoreinstances'},function(args, speaker)
 	notify("Moon Yield", "Successfully allowed more instances.")
-	getgenv().IY_LOADED = false
+	getgenv().IY_LOADED = true
 end)
 
 addcmd('removeallowinstances',{'removeinstances'},function(args, speaker)
-	notify("Moon Yield", "Successfully removed the function 'allowmoreinstances'.")
-	getgenv().IY_LOADED = true
+	notify("Moon Yield", "Successfully removed the function to 'allowmoreinstances'.")
+	getgenv().IY_LOADED = false
 end)
 
 addcmd('discord', {'dc'}, function(args, speaker)
@@ -13781,7 +13786,7 @@ if IsOnMobile then
 	QuickCapture.BackgroundTransparency = 0.14
 	QuickCapture.Position = UDim2.new(0.489, 0, 0, 0)
 	QuickCapture.Size = UDim2.new(0, 32, 0, 33)
-	QuickCapture.Font = Enum.Font.GothamBold
+	QuickCapture.Font = Enum.Font.Code
 	QuickCapture.Text = "PK"
 	QuickCapture.TextColor3 = Color3.fromRGB(255, 255, 255)
 	QuickCapture.TextSize = 20.000
